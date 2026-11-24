@@ -1,5 +1,7 @@
 # Preparación para el Examen General de EDP
 
+[Abrir el mapa navegable del examen general](Mapa_visual_EG_EDPs.ipynb). Las unidades de onda incluyen los modos en el intervalo y el descenso desde Kirchhoff. Las aplicaciones se desarrollan en [electrostática](lAPLACE/03.10.01_Electrostatica_y_Poisson.ipynb) y [caminatas y finanzas](calor/13_04.13_Caminatas_difusion_y_finanzas.ipynb).
+
 Colección de notebooks para estudiar el temario oficial del Examen General de
 Ecuaciones Diferenciales Parciales.
 

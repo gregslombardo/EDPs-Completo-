@@ -1,5 +1,7 @@
 # Matriz de cobertura del temario oficial
 
+[Abrir el mapa navegable del examen general](Mapa_visual_EG_EDPs.ipynb). Las unidades de onda incluyen los modos en el intervalo y el descenso desde Kirchhoff. Las aplicaciones se desarrollan en [electrostática](lAPLACE/03.10.01_Electrostatica_y_Poisson.ipynb) y [caminatas y finanzas](calor/13_04.13_Caminatas_difusion_y_finanzas.ipynb).
+
 La columna **Prioridad** se basa en los exámenes generales disponibles de
 2023-1 a 2026-1, no únicamente en la extensión del programa del curso.
 
@@ -21,7 +23,7 @@ La columna **Prioridad** se basa en los exámenes generales disponibles de
 | Tema oficial | Material principal | Prioridad |
 |---|---|---|
 | Onda en una dimensión y Cauchy | `ONDA/02_01_Cauchy_global_y_dAlembert_ejecutado.ipynb` | Alta |
-| Dependencia, influencia y cono de luz | `ONDA/02_02_Dependencia_y_rango_de_influencia_ejecutado.ipynb` y `ONDA/02_02_Dependencia_y_rango_de_influencia (1).ipynb` | Alta |
+| Dependencia, influencia y cono de luz | `ONDA/02_02_Dependencia_y_rango_de_influencia_ejecutado.ipynb` | Alta |
 | Condiciones de frontera: semirrecta | `ONDA/02_05_Semirrecta_y_metodo_de_reflexion.ipynb` | Media |
 | Condiciones de frontera: intervalo | `ONDA/02_06_Intervalo_extremos_fijos_y_compatibilidad (1).ipynb` | Alta |
 | Problema no homogéneo y Duhamel | `ONDA/02_04_Problema_no_homogeneo_y_Duhamel (1).ipynb` | Media |
@@ -45,7 +47,7 @@ La columna **Prioridad** se basa en los exámenes generales disponibles de
 | Método de Perron | `lAPLACE/03.7.01_Metodo_de_Perron.ipynb` | Alta |
 | Energía y principio de Dirichlet | `lAPLACE/03.8.01_Energia_y_principio_de_Dirichlet.ipynb` | Media |
 | Valores propios y armónicos esféricos | `lAPLACE/03.9.01_Valores_propios_y_armonicos_esfericos.ipynb` | Alta |
-| Aplicaciones físicas | simulaciones 3.1.A-3.1.D del notebook 3.1 | Media |
+| Aplicaciones físicas | simulaciones 3.1.A–3.1.D y [electrostática de una bola](lAPLACE/03.10.01_Electrostatica_y_Poisson.ipynb) | Media |
 
 ## 4. Ecuación del calor
 
@@ -61,6 +63,7 @@ La columna **Prioridad** se basa en los exámenes generales disponibles de
 | No unicidad global | `calor/02_04.02_Soluciones_de_Tychonoff.ipynb` | Consulta |
 | Teorema de Widder | `calor/10_04.10_Teorema_de_Widder.ipynb` | Consulta |
 | Método de energía | `calor/06_04.06_Metodo_de_energia.ipynb` | Media |
+| Difusión, caminatas aleatorias y finanzas | [Aplicaciones del núcleo](calor/13_04.13_Caminatas_difusion_y_finanzas.ipynb) | Media |
 
 ## Criterio de cierre
 

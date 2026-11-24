@@ -2,7 +2,11 @@
 
 Fecha de referencia: 23 de julio de 2026.
 
-## Resultado
+## Actualización del 23 de noviembre de 2026
+
+El [mapa por temas](Mapa_visual_EG_EDPs.ipynb) lleva a las unidades ampliadas. Se integraron figuras estáticas dentro de las unidades canónicas, animaciones de calor, la escena de choque y rarefacción del cuaderno local y aplicaciones de Poisson y calor. Los conteos siguientes documentan la revisión de julio.
+
+## Resultado de julio
 
 - 52/52 archivos `.ipynb` son notebooks JSON válidos.
 - La ruta activa contiene 54 ejercicios: como máximo dos normales por

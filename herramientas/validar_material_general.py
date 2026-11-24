@@ -8,12 +8,15 @@ La validación no ejecuta celdas ni renderiza animaciones.
 
 from __future__ import annotations
 
+import base64
+import binascii
 import hashlib
 import json
 import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -106,6 +109,39 @@ def main() -> int:
                     f"{rel}: {general_count} ejercicios de nivel General; "
                     "objetivo máximo: 1"
                 )
+
+    # El mapa es la ruta de estudio en la vista estática de GitHub.
+    mapa = ROOT / "Mapa_visual_EG_EDPs.ipynb"
+    try:
+        celdas_mapa = json.loads(mapa.read_bytes())["cells"]
+    except (OSError, ValueError, KeyError) as exc:
+        errors.append(f"Mapa del general ilegible: {exc}")
+        celdas_mapa = []
+    destinos = {
+        unquote(enlace)
+        for celda in celdas_mapa
+        for enlace in re.findall(r"\]\(([^)\s]+\.ipynb)\)", cell_source(celda))
+    }
+    if not destinos:
+        errors.append("El mapa del general carece de enlaces a notebooks")
+    for relativo in sorted(destinos):
+        try:
+            cuaderno = json.loads((ROOT / relativo).read_bytes())
+            imagenes = [
+                salida["data"]["image/png"]
+                for celda in cuaderno["cells"]
+                for salida in celda.get("outputs", [])
+                if "image/png" in salida.get("data", {})
+            ]
+            if not imagenes:
+                errors.append(f"{relativo}: falta una figura guardada para la vista estática")
+            for imagen in imagenes:
+                datos = base64.b64decode("".join(imagen).strip(), validate=True)
+                if not datos.startswith(bytes.fromhex("89504e470d0a1a0a")):
+                    errors.append(f"{relativo}: salida PNG inválida")
+        except (OSError, ValueError, KeyError, binascii.Error) as exc:
+            errors.append(f"{relativo}: {exc}")
+    print(f"Cuadernos enlazados en el mapa: {len(destinos)}")
 
     for paths in hashes.values():
         if len(paths) > 1:
